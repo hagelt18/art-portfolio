@@ -2,18 +2,9 @@
   text-align: center;
   padding: 20px;
   background: linear-gradient(360deg, #652db9, #381967);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .App-Content {
   text-align: center;
   margin: 20px;
-}
-
-.react-photo-gallery--gallery img {
-  margin: 4px !important;
-  border-radius: 6px !important;
-  flex: 1 !important;
-  object-fit: cover !important;
-  height: auto !important;
-  
 }

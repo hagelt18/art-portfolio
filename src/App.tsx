@@ -1,137 +1,67 @@
 import { useCallback, useMemo, useState } from 'react';
 import './App.css';
-import { getArtList } from './art-service';
-import Gallery from 'react-photo-gallery';
-import Modal from '@mui/material/Modal';
+import GalleryPage from './pages/gallery/GalleryPage';
+import AboutPage from './pages/about/AboutPage';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import ShopIcon from '@mui/icons-material/ShoppingCart';
-import ZoomInIcon from '@mui/icons-material/ZoomIn';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import ResponsiveAppBar from './Menu';
+// import {
+//   createBrowserRouter,
+//   redirect,
+//   RouterProvider,
+
+// } from "react-router-dom";
+
+import { Routes, Route, Outlet, Link, redirect, Navigate } from "react-router-dom";
+
 
 function App() {
+  // const router = createBrowserRouter([
+  //   // {
+  //   //   path: "/",
+  //   //   component: <GalleryPage/>
+  //   // },
+  //   {
+  //     path: "/",
+  //     component: <div>HOME</div>
+  //   },
+  //   {
+  //     path: "shop",
+  //     component: <div>SHOP</div>
+  //   },
+  //   {
+  //     path: "about",
+  //     component: <div>ABOUT</div>
+  //   }
+  // ]);
 
-  const artList = useMemo(getArtList, []);
-  const [currentImage, setCurrentImage] = useState<any>();
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  const onGalleryItemClicked = useCallback((event: any, item: any) => {
-    // console.log(galleryImages[item.index]);
-    setCurrentImage(artList[item.index]);
-    setViewerIsOpen(true);
-  }, [artList]);
-
-  const closeViewer = () => {
-    setCurrentImage(0);
-    setViewerIsOpen(false);
-  };
-
-  const galleryImages = useMemo(() => {
-    return artList.map(a => {
-      return {
-        original: a.url,
-        src: `${process.env.PUBLIC_URL}/assets/images/${a.smallFile}`,
-        alt: a.name,
-        width: a.smallSize.width,
-        height: a.smallSize.height,
-      }
-    })
-  }, [artList]);
-
-  const modalStyle = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    maxHeight: 'calc(100vh - 10px)',
-    maxWidth: 'calc(100vw - 10px)',
-    border: 'none',
-    backgroundColor: 'rgba(0,0,0)',
-    borderRadius: '16px',
-    boxShadow: 24,
-    textAlign: 'center',
-    pt: 2,
-    px: 4,
-    pb: 3,
-  };
-
-  const openMainShop = () => { window.open('https://www.redbubble.com/people/hagelt18/explore?asc=u&page=1&sortOrder=recent') }
-  const openCurrentImageShop = () => { window.open(currentImage.shopLink) }
 
   return (
     <Box className="App">
-
-      <Box className="App-Header" style={{ display: 'flex', alignItems: 'flex-start' }}>
-        <Box>
-          <Typography fontFamily={"Passion One"} variant="h1">Art Gallery</Typography>
-          <Box><Typography style={{ textAlign: 'right' }}>by Tim Hagel</Typography></Box>
+      <Box className="App-Header"
+        style={{ display: 'flex', alignItems: 'center' }}>
+        <Box className='App-Header-Child App-Header-TextGroup' style={{ flex: '1' }}>
+          <Typography fontFamily={"Passion One"} variant="h1" style={{ lineHeight: 1 }}>
+            Tim Hagel
+          </Typography>
+          <Typography variant="subtitle1" style={{ fontSize: '24px' }}>Artist Portfolio</Typography>
         </Box>
-        <Button style={{ marginLeft: 'auto' }} variant="contained" startIcon={<ShopIcon />} onClick={openMainShop} >
-          <Typography>Shop</Typography>
-        </Button>
       </Box>
-
+      <ResponsiveAppBar />
       <Box className="App-Content">
-        <Gallery photos={galleryImages}
-          onClick={onGalleryItemClicked}
-        />;
-        {viewerIsOpen && (
-          <Modal
-            open={viewerIsOpen}
-            onClose={closeViewer}
-
-          >
-            <Box sx={{ ...modalStyle, width: currentImage.smallSize?.width, height: currentImage.smallSize?.height }}>
-              <IconButton
-                style={{ position: 'absolute', top: '0', right: '0', color: 'white', margin: '10px' }}
-                size="large"
-                onClick={closeViewer}
-                aria-label="close preview">
-                <CloseIcon style={{width: '52px', height: '52px'}} />
-              </IconButton>
-
-              <img
-                alt={currentImage.name}
-                style={{ 
-                  objectFit: 'contain', 
-                  height: 'calc(100% - 64px)', 
-                  width: 'calc(100% - 6px)' 
-                }}
-                src={`${process.env.PUBLIC_URL}/assets/images/${currentImage.smallFile}`}
-                onClick={closeViewer}
-              />
-              <Box>
-                <Typography fontSize="18px" fontWeight={700} >
-                  
-                  {currentImage.name} ({currentImage.year})
-                  <IconButton
-                    style={{zIndex: 10, color: 'orange'}}
-                    size="small"
-                    onClick={()=>{ window.open(`${process.env.PUBLIC_URL}/assets/images/${currentImage.smallFile}`)}}
-                    aria-label="View full image in new tab"
-                  >
-                    <ZoomInIcon />
-                  </IconButton>
-                  {currentImage.shopLink && (
-                    <IconButton
-                      style={{ zIndex: 10, color: 'orange', display: 'inline' }}
-                      size="small"
-                      onClick={openCurrentImageShop}
-                      aria-label="View art in Red bubble Store">
-                      <ShopIcon />
-                    </IconButton>
-                  )}
-                </Typography>
-              </Box>
-            </Box>
-
-          </Modal>
-        )}
+        {/* <RouterProvider router={router} /> */}
+        <Routes>
+          {/* <Route path="/" element={<GalleryPage />} /> */}
+          <Route path="/" element={<Navigate to="/gallery"/>} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/about" element={<AboutPage/>} />
+          {/* <Route path="/shop" element={<div>SHOP</div>} /> */}
+          <Route path="*" element={<div>NOT FOUND</div>} />
+        </Routes>
       </Box>
     </Box>
   );
