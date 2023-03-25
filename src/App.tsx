@@ -87,21 +87,22 @@ function App() {
           >
             <Box sx={{ ...modalStyle, width: currentImage.smallSize?.width, height: currentImage.smallSize?.height }}>
               <IconButton
-                style={{ position: 'absolute', top: '0', right: '0', color: 'white', margin: '5px' }}
+                style={{ position: 'absolute', top: '0', right: '0', color: 'white', margin: '10px' }}
                 size="large"
                 onClick={closeViewer}
                 aria-label="close preview">
-                <CloseIcon />
+                <CloseIcon style={{width: '52px', height: '52px'}} />
               </IconButton>
 
               <img
                 alt={currentImage.name}
                 style={{ 
                   objectFit: 'contain', 
-                  height: 'calc(100% - 32px)', 
+                  height: 'calc(100% - 64px)', 
                   width: 'calc(100% - 6px)' 
                 }}
                 src={`${process.env.PUBLIC_URL}/assets/images/${currentImage.smallFile}`}
+                onClick={closeViewer}
               />
               <Box>
                 <Typography fontSize="18px" fontWeight={700} >
