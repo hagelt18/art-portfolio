@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -23,9 +22,7 @@ root.render(
     <StyledEngineProvider injectFirst>      
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <App />
       </ThemeProvider>
     </StyledEngineProvider>    
   </React.StrictMode>
