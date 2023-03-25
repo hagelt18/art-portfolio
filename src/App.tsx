@@ -34,7 +34,7 @@ function App() {
     return artList.map(a => {
       return {
         original: a.url,
-        src: `/assets/images/${a.smallFile}`,
+        src: `${process.env.PUBLIC_URL}/assets/images/${a.smallFile}`,
         alt: a.name,
         width: a.smallSize.width,
         height: a.smallSize.height,
@@ -96,7 +96,7 @@ function App() {
               <img
                 alt={currentImage.name}
                 style={{ objectFit: 'contain', height: '90%', width: '90%' }}
-                src={`/assets/images/${currentImage.smallFile}`}
+                src={`${process.env.PUBLIC_URL}/assets/images/${currentImage.smallFile}`}
               />
               <Box>
                 <Typography fontSize="16px" >
