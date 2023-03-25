@@ -24,7 +24,7 @@ function ResponsiveAppBar() {
                             component="img"
                             sx={{ display: { xs: 'flex', md: 'flex' }, width: '48px', height: '48px', mr: 1 }}
                             alt="Menu Icon"
-                            src="/android-chrome-192x192.png"
+                            src={`${process.env.PUBLIC_URL}/android-chrome-192x192.png`}
                         />
                         {pages.map((page) => (
                             <Button
