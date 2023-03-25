@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import ShopIcon from '@mui/icons-material/ShoppingCart';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
@@ -106,7 +107,16 @@ function App() {
               />
               <Box>
                 <Typography fontSize="18px" fontWeight={700} >
+                  
                   {currentImage.name} ({currentImage.year})
+                  <IconButton
+                    style={{zIndex: 10, color: 'orange'}}
+                    size="small"
+                    onClick={()=>{ window.open(`${process.env.PUBLIC_URL}/assets/images/${currentImage.smallFile}`)}}
+                    aria-label="View full image in new tab"
+                  >
+                    <ZoomInIcon />
+                  </IconButton>
                   {currentImage.shopLink && (
                     <IconButton
                       style={{ zIndex: 10, color: 'orange', display: 'inline' }}
