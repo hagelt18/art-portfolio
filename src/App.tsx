@@ -50,7 +50,9 @@ function App() {
     maxWidth: '90%',
     maxHeight: '90%',
     border: 'none',
-    backgroundColor: 'rgba(0,0,0,0.8)',
+    // backgroundColor: 'rgba(0,0,0,0.8)',
+    backgroundColor: 'rgba(0,0,0)',
+    borderRadius: '16px',
     boxShadow: 24,
     textAlign: 'center',
     pt: 2,
@@ -99,7 +101,7 @@ function App() {
                 src={`${process.env.PUBLIC_URL}/assets/images/${currentImage.smallFile}`}
               />
               <Box>
-                <Typography fontSize="16px" >
+                <Typography fontSize="18px" fontWeight={700} >
                   {currentImage.name} ({currentImage.year})
                   {currentImage.shopLink && (
                     <IconButton
