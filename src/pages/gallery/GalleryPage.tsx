@@ -16,7 +16,6 @@ function GalleryPage() {
   const [currentImage, setCurrentImage] = useState<any>();
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const onGalleryItemClicked = useCallback((event: any, item: any) => {
-    // console.log(galleryImages[item.index]);
     setCurrentImage(artList[item.index]);
     setViewerIsOpen(true);
   }, [artList]);
@@ -61,7 +60,7 @@ function GalleryPage() {
     <Box className="Gallery-Page">
       <Gallery photos={galleryImages}
         onClick={onGalleryItemClicked}
-      />;
+      />
       {viewerIsOpen && (
         <Modal
           open={viewerIsOpen}
