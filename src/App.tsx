@@ -47,10 +47,9 @@ function App() {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    maxWidth: '90%',
-    maxHeight: '90%',
+    maxHeight: 'calc(100vh - 10px)',
+    maxWidth: 'calc(100vw - 10px)',
     border: 'none',
-    // backgroundColor: 'rgba(0,0,0,0.8)',
     backgroundColor: 'rgba(0,0,0)',
     borderRadius: '16px',
     boxShadow: 24,
@@ -97,7 +96,11 @@ function App() {
 
               <img
                 alt={currentImage.name}
-                style={{ objectFit: 'contain', height: '90%', width: '90%' }}
+                style={{ 
+                  objectFit: 'contain', 
+                  height: 'calc(100% - 32px)', 
+                  width: 'calc(100% - 6px)' 
+                }}
                 src={`${process.env.PUBLIC_URL}/assets/images/${currentImage.smallFile}`}
               />
               <Box>

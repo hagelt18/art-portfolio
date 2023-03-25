@@ -117,6 +117,35 @@
     }
   },
   {
+    "name": "Zelda - Windfish",
+    "url": "https://drive.google.com/file/d/1UHkoXJ6PRovFzrK229GoktvG9L0BWGyZ/view?usp=share_link",
+    "shopLink": "https://www.redbubble.com/shop/ap/41528241",
+    "year": 2019,
+    "originalSize": {
+      "width": 3508,
+      "height": 2366
+    },
+    "smallFile": "small-zelda-windfish.png",
+    "smallSize": {
+      "width": 1601,
+      "height": 1080
+    }
+  },
+  {
+    "name": "Zelda - Windfish (GB)",
+    "url": "https://drive.google.com/file/d/1gXSfmTv8_K4ffALFfEVjTBXw09z9IXw2/view?usp=share_link",
+    "year": 2019,
+    "originalSize": {
+      "width": 3508,
+      "height": 2480
+    },
+    "smallFile": "small-zelda-windfish-(gb).png",
+    "smallSize": {
+      "width": 1528,
+      "height": 1080
+    }
+  },
+  {
     "name": "CoreCon 13 - Teaser Poster",
     "url": "https://drive.google.com/file/d/1TpbYMJ8MPYhje73u_EPN2_NEdLOL-X0l/view?usp=share_link",
     "year": 2022,
@@ -275,35 +304,6 @@
     "smallFile": "small-no-time-to-slide.png",
     "smallSize": {
       "width": 841,
-      "height": 1080
-    }
-  },
-  {
-    "name": "Zelda - Windfish",
-    "url": "https://drive.google.com/file/d/1UHkoXJ6PRovFzrK229GoktvG9L0BWGyZ/view?usp=share_link",
-    "shopLink": "https://www.redbubble.com/shop/ap/41528241",
-    "year": 2019,
-    "originalSize": {
-      "width": 3508,
-      "height": 2366
-    },
-    "smallFile": "small-zelda-windfish.png",
-    "smallSize": {
-      "width": 1601,
-      "height": 1080
-    }
-  },
-  {
-    "name": "Zelda - Windfish (GB)",
-    "url": "https://drive.google.com/file/d/1gXSfmTv8_K4ffALFfEVjTBXw09z9IXw2/view?usp=share_link",
-    "year": 2019,
-    "originalSize": {
-      "width": 3508,
-      "height": 2480
-    },
-    "smallFile": "small-zelda-windfish-(gb).png",
-    "smallSize": {
-      "width": 1528,
       "height": 1080
     }
   },
