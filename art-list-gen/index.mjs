@@ -3,6 +3,9 @@ import artFiles from '../src/art-files.json' assert { type: 'json' };
 import fs from 'fs';
 import imgThumbnail from 'image-thumbnail';
 import sizeOf from 'image-size';
+import fetch from 'node-fetch';
+
+const skipExisting = true;
 
 // obtain the size of an image
 const getImageSize = (imgPath) =>{
@@ -106,10 +109,10 @@ const run = async () => {
 
         try {
 
-            // if (fs.existsSync(outputFile)){
-            //     console.log(`Thumbnail already exists: ${outputFile}`);
-            //     continue;
-            // }
+            if (skipExisting && fs.existsSync(outputFile)){
+                console.log(`Thumbnail already exists: ${outputFile}`);
+                continue;
+            }
 
             
             
