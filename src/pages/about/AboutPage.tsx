@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 function About() {
   const coreConGuestUrl = 'https://www.fargocorecon.org/guests/';
   const scottStoryTShirtUrl = 'https://www.prowrestlingtees.com/wrestler-t-shirts/scottstory/dead-is-better.html';
+  const kamikazeSnowmenUrl = 'https://kamikazesnowmen.bandcamp.com/';
 
   return (
     <Box sx={{display: {xs: 'block', sm: 'flex'}, maxWidth: '800px', margin: 'auto', gap: '12px' }}>
@@ -21,7 +22,8 @@ function About() {
         Tim was a featured <Link target="_blank" rel="noopener" href={coreConGuestUrl}>Guest Artist at CoreCon 2023</Link>, 
         creating all of the art for the "Fantastic Worlds" theme for that year. 
         He has also done other freelance work such as creating the t-shirt design for <Link target="_blank" rel="noopener" href={scottStoryTShirtUrl}>Scott Story</Link>, 
-        a local professional wrestler as well as some artwork for the comedy band "Kamikaze Snowmen".
+        a local professional wrestler 
+        as well as some artwork for the comedy band <Link target="_blank" rel="noopener" href={kamikazeSnowmenUrl}>Kamikaze Snowmen</Link>.
       </Typography>
     </Box>
   )
